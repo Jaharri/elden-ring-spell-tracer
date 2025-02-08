@@ -1,28 +1,52 @@
 body {
-    font-family: 'Proxima Nova', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #1c1c1c;  /* Dark background */
 }
 
-h1 {
-    text-align: center;
-    margin-top: 20px;
-    color: #fff;
+#game-container {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    max-width: 600px;
+    max-height: 800px;
+    background: black;
+    border: 2px solid white;
 }
 
-#manaBar {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 200px;
+#game-canvas {
+    width: 100%;
+    height: 80%;
+    background: #222;
+}
+
+#mana-bar {
+    width: 100%;
     height: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid blue;
+    background: blue;
+    margin-top: 10px;
+    position: relative;
 }
 
-#manaFill {
+#mana {
+    display: block;
+    width: 100%;
     height: 100%;
-    background-color: blue;
+    background: cyan;
+    transition: width 0.3s ease;
+}
+
+#flask-button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
