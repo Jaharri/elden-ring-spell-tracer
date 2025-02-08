@@ -1,7 +1,4 @@
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-
-// Game logic here
-
+import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
 
 let scene, camera, renderer;
 let drawing = false;
@@ -108,84 +105,4 @@ function createUI() {
     manaBar.style.bottom = '20px';
     manaBar.style.left = '20px';
     manaBar.style.width = '200px';
-    manaBar.style.height = '20px';
-    manaBar.style.backgroundColor = 'rgba(0,0,0,0.5)';
-    manaBar.style.border = '2px solid blue';
-    document.body.appendChild(manaBar);
-
-    let manaFill = document.createElement('div');
-    manaFill.id = 'manaFill';
-    manaFill.style.height = '100%';
-    manaFill.style.width = `${(mana / maxMana) * 100}%`;
-    manaFill.style.backgroundColor = 'blue';
-    manaBar.appendChild(manaFill);
-}
-
-function updateUI() {
-    document.getElementById('manaFill').style.width = `${(mana / maxMana) * 100}%`;
-}
-
-function onMouseDown(event) {
-    drawing = true;
-    mousePath = [];
-}
-
-function onMouseMove(event) {
-    if (!drawing) return;
-    const x = (event.clientX / window.innerWidth) * 2 - 1;
-    const y = -(event.clientY / window.innerHeight) * 2 + 1;
-    mousePath.push(new THREE.Vector3(x, y, 0));
-    updateLine();
-}
-
-function onMouseUp(event) {
-    drawing = false;
-    recognizeSpell(mousePath);
-    mousePath = [];
-    updateLine();
-}
-
-function updateLine() {
-    lineGeometry.setFromPoints(mousePath);
-}
-
-function damageEnemy(amount) {
-    if (enemies.length > 0) {
-        enemies[0].health -= amount;
-        console.log(`Enemy health: ${enemies[0].health}`);
-        if (enemies[0].health <= 0) {
-            scene.remove(enemies[0].mesh);
-            enemies.shift();
-            console.log("Enemy defeated!");
-            spawnEnemy();
-        }
-    }
-}
-
-function moveEnemies() {
-    enemies.forEach(enemy => {
-        enemy.position.z += enemy.speed;
-        enemy.mesh.position.copy(enemy.position);
-        if (enemy.position.z >= camera.position.z) {
-            playerHealth -= 10;
-            enemy.mesh.material.color.set(0xff0000);
-            setTimeout(() => enemy.mesh.material.color.set(0x550000), 500);
-            console.log("Enemy attacked! Player health:", playerHealth);
-            if (playerHealth <= 0) {
-                console.log("Game Over");
-                resetGame();
-            }
-            enemy.position.z = -5;
-        }
-    });
-}
-
-function animate() {
-    requestAnimationFrame(animate);
-    mana = Math.min(maxMana, mana + manaRegenRate);
-    moveEnemies();
-    updateUI();
-    renderer.render(scene, camera);
-}
-
-init();
+    manaBar.style.hei
