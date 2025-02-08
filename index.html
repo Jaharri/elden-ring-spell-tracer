@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elden Ring Spellcasting Game</title>
-    
-    <!-- Use Google Fonts for Proxima Nova -->
-    <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Optional Styling -->
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spellcasting Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="game.js"></script>
 </head>
 <body>
-    <h1>Elden Ring Spellcasting Game</h1>
-    
-    <!-- Correct import for THREE.js as a module -->
-    <script type="module" src="game.js"></script>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="mana-bar"><span id="mana"></span></div>
+        <button id="flask-button">Use Flask</button>
+    </div>
 </body>
 </html>
