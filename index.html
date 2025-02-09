@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elden Ring Spell Tracer</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-    </style>
-</head>
 <body>
     <canvas id="gameCanvas"></canvas>
-    <script src="script.js"></script> <!-- Change 'script.js' to your actual JS file name -->
+    <div id="ui">
+        <p id="health">Health: 100</p>
+        <p id="mana">Mana: 100</p>
+        <p id="flasks">Flasks: 3</p>
+        <button onclick="useFlask()">Use Flask</button>
+    </div>
+    <script src="script.js" defer></script>
 </body>
-</html>
